@@ -22,8 +22,6 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 db.books = require("./models/book.model")(sequelize, DataTypes);
-db.users = require("./models/user.model")(sequelize, DataTypes);
-db.products = require("./models/product.model")(sequelize, DataTypes);
 
 //migrate code to show table in supabase
 sequelize.sync({ alter: false }).then(() => {

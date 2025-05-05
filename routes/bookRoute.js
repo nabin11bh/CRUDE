@@ -5,7 +5,7 @@ const {
   editBook,
 } = require("../controllers/bookController");
 
-const router = require("express").Router;
+const router = require("express").Router();
 
 router.route("/books").get(fetchBooks).post(addBook);
 router.route("/books/:id").delete(deleteBooks).patch(editBook);
