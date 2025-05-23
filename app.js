@@ -1,19 +1,18 @@
 const express = require("express");
-const { books } = require("./database/connection");
-const {
-  fetchBooks,
-  addBook,
-  deleteBooks,
-  editBook,
-} = require("./controllers/bookController");
+const bookRoute = require("./routes/bookRoute");
+const cors = require("cors");
 const app = express();
 require("./database/connection");
-app.use(express.json()); // postman bata  data pathako bujauna yo lekhnai parxa
 
-const bookRoute = require("./routes/bookRoute");
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+  })
+);
 
-//localhost:3000/api/ + /books = localhost:3000/api/books
-app.use("/api/", bookRoute);
+app.use(express.json());
+
+app.use("/api", bookRoute);
 
 app.listen(3000, function () {
   console.log("server/backend/node project has strated at port 3000");

@@ -8,7 +8,7 @@ const {
 const router = require("express").Router();
 
 router.route("/books").get(fetchBooks).post(addBook);
-router.route("/books/:id").delete(deleteBooks).patch(editBook);
+router.route("/books:id").delete(deleteBooks).patch(editBook);
 
 //router.get("/books", fetchBooks);
 //router.post("/books/:id", addBook);

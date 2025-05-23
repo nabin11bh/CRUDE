@@ -6,7 +6,7 @@ exports.fetchBooks = async function (req, res) {
 
   res.json({
     message: "Books fetches successfully",
-    datas, //datas matra lekhda pni hunxa ,key ra value ko name same vara datas : datas
+    datas,
   });
 };
 
